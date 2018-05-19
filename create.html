@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="./Time-Picker/dist/js/chung-timepicker.js"></script>
+    <link rel="stylesheet" href="./Time-Picker/dist/css/chung-timepicker.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Meeting Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./list.html">會議清單
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">新增會議
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Log in</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" id="add-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name-input">會議名稱</label>
+                            <input type="text" class="form-control" id="name-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date-input">會議日期</label>
+                            <input class="form-control" type="date" id="date-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="time-input">會議時間</label>
+                            <input class="form-control" type="text" id="time-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="location-input">會議地點</label>
+                            <input type="text" class="form-control" id="location-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="attendees-input">出席者</label>
+                            <input type="text" class="form-control" id="attendees-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="agenda-textarea">會議議程</label>
+                            <textarea class="form-control" id="agenda-textarea" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="meeting-minutes-textarea">會議紀錄</label>
+                            <textarea class="form-control" id="meeting-minutes-textarea" rows="10"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-dark" id="add-btn">新增</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCUZXU4n2P-8toZ37L_-4qD72LOqy2QKnI",
+            authDomain: "html-296-elsie.firebaseapp.com",
+            databaseURL: "https://html-296-elsie.firebaseio.com",
+            projectId: "html-296-elsie",
+            storageBucket: "html-296-elsie.appspot.com",
+            messagingSenderId: "277796278417"
+        };
+        firebase.initializeApp(config);
+        var db = firebase.firestore();
+    </script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
