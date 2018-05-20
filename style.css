@@ -33,3 +33,11 @@ section {
 [class^="row"] {
     border: 1px solid red;
 } */
+
+.float-right {
+    float: right;
+}
+
+.fa-exclamation-circle {
+    color: red;
+}

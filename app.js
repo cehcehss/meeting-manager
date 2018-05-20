@@ -40,7 +40,8 @@ $("#add-btn").click(function () {
         .then(function (docRef) {
             console.log("Document written with ID: ", docRef.id);
             console.log("已新增");
-            // $(".form-control").val("");
+            $('.alert').alert()
+            $(".form-control").val("");
         })
         .catch(function (error) {
             console.error("Error adding document: ", error);
